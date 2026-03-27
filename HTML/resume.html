@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+
+/* Layout */
+body {
+  margin-left: 260px;
+  padding: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding: 40px 30px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  border-right: 1px solid #eee;
+}
+
+/* ===== ZIG-ZAG TIMELINE ===== */
+
+.vertical-timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Center line */
+.vertical-timeline::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background: #e5e5e5;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Each row */
+.timeline-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
+  position: relative;
+}
+
+/* Left vs Right */
+.timeline-row.left {
+  flex-direction: row;
+}
+
+.timeline-row.right {
+  flex-direction: row-reverse;
+}
+
+/* Content box */
+.timeline-content {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+/* Logos */
+.timeline-logo-large {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* Hover */
+.timeline-content:hover {
+  transform: translateY(-6px);
+}
+
+.timeline-content:hover .timeline-logo-large {
+  transform: scale(1.08);
+}
+
+/* Text */
+.timeline-text {
+  max-width: 300px;
+}
+
+/* Wiggly arrow in center */
+.timeline-row::after {
+  content: "↝";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+  color: #bbb;
+  animation: wiggle 1.5s infinite;
+}
+
+@keyframes wiggle {
+  0% { transform: translateX(-50%) translateY(0); }
+  25% { transform: translateX(-55%) translateY(2px); }
+  50% { transform: translateX(-45%) translateY(-2px); }
+  75% { transform: translateX(-52%) translateY(2px); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  body {
+    margin-left: 0 !important;
+    padding: 15px;
+  }
+
+  .vertical-timeline::before {
+    left: 10px;
+  }
+
+  .timeline-row {
+    flex-direction: column !important;
+    align-items: flex-start;
+    margin-left: 20px;
+  }
+
+  .timeline-content {
+    width: 100%;
+  }
+
+  .timeline-row::after {
+    left: 10px;
+    transform: none;
+  }
+
+  .timeline-logo-large {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<nav class="navbar navbar-expand-md navbar-light bg-white border-end d-none d-md-flex flex-column p-4"
+     style="width:260px; min-height:100vh; position:fixed; left:0; top:0;">
+  <div class="navbar-nav flex-column w-100">
+    <a class="nav-link mb-2" href="../index.html">Home</a>
+    <a class="nav-link mb-2" href="portfolio.html">Portfolio</a>
+    <a class="nav-link mb-2" href="about.html">About Me</a>
+    <a class="nav-link mb-2 active" href="resume.html">Resume</a>
+    <a class="nav-link mb-2" href="contact.html">Contact</a>
+    <a class="nav-link mb-2" href="projecttimeline.html">Timeline</a>
+  </div>
+</nav>
+
+<!-- Mobile Navbar -->
+<nav class="navbar navbar-expand-md navbar-light bg-white border-bottom d-md-none px-3">
+  <a class="navbar-brand fw-bold" href="../index.html">Yasmina's Portfolio</a>
+
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="mobileNav">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+      <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
+      <li class="nav-item"><a class="nav-link active" href="resume.html">Resume</a></li>
+      <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      <li class="nav-item"><a class="nav-link" href="projecttimeline.html">Timeline</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Content -->
+
+<div class="content">
+  <a href="../index.html" style="text-decoration:none; color: inherit;">
+    <h1 class="display-4 fw-bold">Yasmina Makkouk</h1>
+  </a>
+  <p class="lead">Student • Designer • Marketer • Aspiring Business Analyst</p>
+
+<!-- Timeline -->
+  <div class="container mt-5">
+    <h2 class="fw-bold text-center mb-5">My Experience Journey</h2>
+
+    <div class="vertical-timeline">
+
+      <!-- LSA -->
+      <div class="timeline-row left">
+        <a href="lsa-case.html" class="timeline-content">
+          <img src="../Images/UTMLSA.jpeg" class="timeline-logo-large">
+          <div class="timeline-text">
+            <h5 class="fw-semibold">Lebanese Student Association</h5>
+            <p class="text-muted">Increased event attendance by 113% through partnerships and viral content.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Rohl -->
+      <div class="timeline-row right">
+        <a href="rohl-case.html" class="timeline-content">
+          <img src="../Images/RohlGlobal.jpeg" class="timeline-logo-large">
+          <div class="timeline-text">
+            <h5 class="fw-semibold">Rohl Global</h5>
+            <p class="text-muted">Built brand guidelines and improved workflow efficiency.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Life -->
+      <div class="timeline-row left">
+        <a href="life-case.html" class="timeline-content">
+          <img src="../Images/LIASE.jpeg" class="timeline-logo-large">
+          <div class="timeline-text">
+            <h5 class="fw-semibold">Life Is A Special Event</h5>
+            <p class="text-muted">Scaled engagement for a 400K+ audience through content strategy.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- FYC -->
+      <div class="timeline-row right">
+        <a href="fyc-case.html" class="timeline-content">
+          <img src="../Images/FYC.jpeg" class="timeline-logo-large">
+          <div class="timeline-text">
+            <h5 class="fw-semibold">First Year Connect</h5>
+            <p class="text-muted">Leading marketing strategy and brand direction for student growth.</p>
+          </div>
+        </a>
+      </div>
+
+       <!-- Next -->
+      <div class="timeline-row left">
+        <a href="fyc-case.html" class="timeline-content">
+          <img src="../Images/BlackQM.jpeg" class="timeline-logo-large">
+          <div class="timeline-text">
+            <h5 class="fw-semibold">What's Next?</h5>
+            <p class="text-muted">Let's help each other grow.</p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+  <br>
+
+  <!-- Resume -->
+  <div class="card mx-auto" style="max-width: 800px;">
+    <img src="../Images/YMResume-2026.jpg" class="card-img-top" alt="Resume">
+    <div class="card-body">
+      <p class="card-text text-muted text-center">Accurate as of March 2026.</p>
+    </div>
+  </div>
+
+  
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
