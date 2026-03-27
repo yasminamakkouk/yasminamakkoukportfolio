@@ -66,42 +66,28 @@
       box-shadow: 0 18px 40px rgba(0,0,0,0.08);
     }
 
-    /* ✅ FIXED CAROUSEL (NO FLEX BREAKING) */
-    .carousel-inner {
-      height: 420px;
-      background: #f4f6fb;
+    /* CLUB WORK: no cropping */
+    #Carousel img {
+      max-height: 400px;
+      width: 100%;
+      object-fit: contain;
+      background-color: #f9fafc;
       border-radius: 16px;
     }
 
-    .carousel-item {
-      height: 100%;
-      text-align: center;
-    }
-
-    .carousel-item img {
-      max-height: 100%;
-      max-width: 100%;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      margin: 0 auto;
-      display: block;
-    }
-
-    /* Bigger NPAS */
-    #NPASRedesign .carousel-inner {
-      height: 520px;
-    }
-
-    /* Slightly bigger Meal Match */
-    #MealMatchCarousel .carousel-inner {
-      height: 460px;
+    /* MOCKUPS: cropped nicely */
+    #MealMatchCarousel img,
+    #NPASRedesign img {
+      height: 400px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 16px;
     }
 
     /* Softer arrows */
     .carousel-control-prev-icon,
     .carousel-control-next-icon {
-      filter: invert(1) opacity(0.8);
+      filter: invert(1) opacity(0.6);
     }
 
     .carousel-control-prev:hover,
@@ -113,18 +99,6 @@
       body {
         margin-left: 0;
         padding: 20px;
-      }
-
-      .carousel-inner {
-        height: 300px;
-      }
-
-      #NPASRedesign .carousel-inner {
-        height: 340px;
-      }
-
-      #MealMatchCarousel .carousel-inner {
-        height: 320px;
       }
     }
   </style>
@@ -145,10 +119,11 @@
 
 <div class="content">
 
+  <!-- Header -->
   <h1>Yasmina Makkouk</h1>
   <p class="lead">Student • Designer • Marketer • Aspiring Business Analyst</p>
 
-  <!-- Club Work -->
+  <!-- ================= Club Work ================= -->
   <section>
     <h2>Club Work</h2>
 
@@ -156,15 +131,43 @@
       <div style="max-width: 520px; width: 100%;">
 
         <div id="Carousel" class="carousel slide">
-          <div class="carousel-inner">
-            <div class="carousel-item active"><img src="../Images/FYC.jpeg"></div>
-            <div class="carousel-item"><img src="../Images/FYCJN.jpg"></div>
-            <div class="carousel-item"><img src="../Images/FYCInfoPost.jpg"></div>
-            <div class="carousel-item"><img src="../Images/ROHL1.jpg"></div>
-            <div class="carousel-item"><img src="../Images/ROHL2.jpg"></div>
-            <div class="carousel-item"><img src="../Images/LSA1.jpg"></div>
-            <div class="carousel-item"><img src="../Images/LSA2.jpg"></div>
-            <div class="carousel-item"><img src="../Images/TAG.jpeg"></div>
+          <div class="carousel-inner rounded-4 overflow-hidden">
+            <div class="carousel-item active">
+              <img src="../Images/FYC.jpeg" class="d-block w-100" alt="FYCLogo">
+            </div>
+            <div class="carousel-item">
+              <img src="../Images/FYCJN.jpg" class="d-block w-100" alt="JeopardyNight">
+            </div>
+            <div class="carousel-item">
+              <img src="../Images/FYCInfoPost.jpg" class="d-block w-100" alt="InfoPost">
+            </div>
+            <div class="carousel-item">
+              <img src="../Images/ROHL1.jpg" class="d-block w-100" alt="ROHLGlobal">
+            </div>
+            <div class="carousel-item">
+              <img src="../Images/ROHL2.jpg" class="d-block w-100" alt="ROHLGlobal">
+            </div>
+            <div class="carousel-item">
+              <img src="../Images/LSA1.jpg" class="d-block w-100" alt="LSA">
+            </div>
+            <div class="carousel-item">
+              <img src="../Images/LSA2.jpg" class="d-block w-100" alt="LSA">
+            </div>
+            <div class="carousel-item">
+              <img src="../Images/TAG.jpeg" class="d-block w-100" alt="TheAgingGames">
+            </div>
+          </div>
+
+          <!-- Indicators -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#Carousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#Carousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#Carousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#Carousel" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#Carousel" data-bs-slide-to="4"></button>
+            <button type="button" data-bs-target="#Carousel" data-bs-slide-to="5"></button>
+            <button type="button" data-bs-target="#Carousel" data-bs-slide-to="6"></button>
+            <button type="button" data-bs-target="#Carousel" data-bs-slide-to="7"></button>
           </div>
 
           <button class="carousel-control-prev" type="button" data-bs-target="#Carousel" data-bs-slide="prev">
@@ -179,14 +182,18 @@
     </div>
   </section>
 
-  <!-- Meal Match -->
+  <!-- ================= MEAL MATCH ================= -->
   <section>
     <h2>Meal Match</h2>
 
     <div id="MealMatchCarousel" class="carousel slide mt-4">
-      <div class="carousel-inner">
-        <div class="carousel-item active"><img src="../Images/MealMatchMockup1.jpg"></div>
-        <div class="carousel-item"><img src="../Images/MealMatchMockup2.jpg"></div>
+      <div class="carousel-inner rounded-4 overflow-hidden">
+        <div class="carousel-item active">
+          <img src="../Images/MealMatchMockup1.jpg" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="../Images/MealMatchMockup2.jpg" class="d-block w-100">
+        </div>
       </div>
 
       <button class="carousel-control-prev" type="button" data-bs-target="#MealMatchCarousel" data-bs-slide="prev">
@@ -199,27 +206,42 @@
 
     <div class="case-card">
       <div class="section-label">Problem</div>
-      <p>Busy students and early-career professionals struggle with meal planning due to time constraints and decision fatigue.</p>
+      <p>Busy students and early-career professionals struggle with meal planning due to time constraints and decision fatigue. Existing recipe platforms require manual entry, creating friction and leading to default takeout.</p>
 
       <div class="section-label">Objective</div>
       <p>Design a low-effort, intuitive solution that reduces input friction and decision fatigue.</p>
 
+      <div class="section-label">User Pain Points</div>
+      <ul>
+        <li>“I don’t know what to cook with what I have.”</li>
+        <li>Too many steps to find a recipe</li>
+        <li>Time pressure after school/work</li>
+        <li>Overwhelming recipe options</li>
+        <li>Food expiring due to lack of planning</li>
+      </ul>
+
       <div class="section-label">Solution</div>
-      <p>Users upload a single photo of their fridge to generate meal suggestions.</p>
+      <p>Users upload a single photo of their fridge. The system detects ingredients and generates quick meal suggestions, minimizing friction and cognitive load.</p>
     </div>
   </section>
 
-  <!-- NPAS -->
+  <!-- ================= NPAS ================= -->
   <section>
     <h2>Canadian NPAS Redesign</h2>
 
     <div class="d-flex justify-content-center mt-4">
-      <div style="max-width: 600px; width: 100%;">
+      <div style="max-width: 400px; width: 100%;">
         <div id="NPASRedesign" class="carousel slide">
-          <div class="carousel-inner">
-            <div class="carousel-item active"><img src="../Images/NPAS1.jpeg"></div>
-            <div class="carousel-item"><img src="../Images/NPAS2.jpeg"></div>
-            <div class="carousel-item"><img src="../Images/NPAS3.jpeg"></div>
+          <div class="carousel-inner rounded-4 overflow-hidden">
+            <div class="carousel-item active">
+              <img src="../Images/NPAS1.jpeg" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+              <img src="../Images/NPAS2.jpeg" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+              <img src="../Images/NPAS3.jpeg" class="d-block w-100">
+            </div>
           </div>
 
           <button class="carousel-control-prev" type="button" data-bs-target="#NPASRedesign" data-bs-slide="prev">
@@ -234,23 +256,37 @@
 
     <div class="case-card">
       <div class="section-label">Problem</div>
-      <p>Emergency alerts present dense information that is hard to process quickly.</p>
+      <p>Emergency alert systems must communicate critical information instantly. Existing NPAS interface presents dense info with limited hierarchy, making comprehension harder in stressful situations.</p>
+
+      <div class="section-label">Objective</div>
+      <p>Modernize the alert interface to improve clarity, accessibility, and response efficiency.</p>
+
+      <div class="section-label">User Pain Points</div>
+      <ul>
+        <li>Difficulty identifying urgent info</li>
+        <li>Overwhelming text blocks</li>
+        <li>Limited accessibility considerations</li>
+        <li>Unclear action steps</li>
+      </ul>
 
       <div class="section-label">Solution</div>
-      <p>Redesigned interface improves hierarchy, clarity, and usability.</p>
+      <p>Redesign introduces stronger hierarchy, simplified messaging, clear urgency indicators, and accessibility improvements to reduce cognitive load.</p>
     </div>
   </section>
 
 </div>
 
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-document.querySelectorAll('.carousel').forEach(c => {
-  new bootstrap.Carousel(c, {
+document.addEventListener("DOMContentLoaded", function () {
+  const carousels = document.querySelectorAll('.carousel');
+  carousels.forEach(c => new bootstrap.Carousel(c, {
     interval: false,
+    ride: false,
     touch: true
-  });
+  }));
 });
 </script>
 
