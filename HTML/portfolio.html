@@ -84,10 +84,20 @@
       border-radius: 16px;
     }
 
-    /* Softer arrows (WHITE) */
-.carousel-control-prev-icon,
+   .carousel-control-prev-icon,
 .carousel-control-next-icon {
   filter: brightness(0) invert(1);
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  padding: 16px;
+  opacity: 0.8;
+  transition: all 0.2s ease;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.35);
 }
 
     .carousel-control-prev:hover,
