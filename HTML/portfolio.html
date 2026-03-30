@@ -84,23 +84,36 @@
       border-radius: 16px;
     }
 
-   .carousel-control-prev-icon,
-.carousel-control-next-icon {
-  filter: brightness(0) invert(1);
-  background-color: rgba(0, 0, 0, 0.25);
-  border-radius: 50%;
-  padding: 15px;
-}
+    /* =========================
+       BASE CAROUSEL ARROWS
+       ========================= */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      filter: brightness(0) invert(1);
+      background-color: rgba(0, 0, 0, 0.25);
+      border-radius: 50%;
+      padding: 15px;
+      opacity: 0.85;
+      transition: all 0.2s ease;
+    }
 
-.carousel-control-prev:hover .carousel-control-prev-icon,
-.carousel-control-next:hover .carousel-control-next-icon {
-  opacity: 1;
-  background-color: rgba(0, 0, 0, 0.35);
-}
-
-    .carousel-control-prev:hover,
-    .carousel-control-next:hover {
+    .carousel-control-prev:hover .carousel-control-prev-icon,
+    .carousel-control-next:hover .carousel-control-next-icon {
       opacity: 1;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    /* GRAPHIC WORK FIX (makes arrows visible on light images) */
+    #Carousel .carousel-control-prev-icon,
+    #Carousel .carousel-control-next-icon {
+      background-color: rgba(0, 0, 0, 0.45);
+      padding: 18px;
+      opacity: 0.95;
+    }
+
+    #Carousel .carousel-control-prev:hover .carousel-control-prev-icon,
+    #Carousel .carousel-control-next:hover .carousel-control-next-icon {
+      background-color: rgba(0, 0, 0, 0.65);
     }
 
     @media (max-width: 768px) {
@@ -111,6 +124,7 @@
     }
   </style>
 </head>
+
 <body>
 
 <!-- Sidebar -->
@@ -128,7 +142,6 @@
 
 <div class="content">
 
-  <!-- Header -->
   <h1>Yasmina Makkouk</h1>
   <p class="lead">Student • Designer • Marketer • Aspiring Business Analyst</p>
 
@@ -142,32 +155,31 @@
         <div id="Carousel" class="carousel slide">
           <div class="carousel-inner rounded-4 overflow-hidden">
             <div class="carousel-item active">
-              <img src="../Images/FYC.jpeg" class="d-block w-100" alt="FYCLogo">
+              <img src="../Images/FYC.jpeg" class="d-block w-100">
             </div>
             <div class="carousel-item">
-              <img src="../Images/FYCJN.jpg" class="d-block w-100" alt="JeopardyNight">
+              <img src="../Images/FYCJN.jpg" class="d-block w-100">
             </div>
             <div class="carousel-item">
-              <img src="../Images/FYCInfoPost.jpg" class="d-block w-100" alt="InfoPost">
+              <img src="../Images/FYCInfoPost.jpg" class="d-block w-100">
             </div>
             <div class="carousel-item">
-              <img src="../Images/ROHL1.jpg" class="d-block w-100" alt="ROHLGlobal">
+              <img src="../Images/ROHL1.jpg" class="d-block w-100">
             </div>
             <div class="carousel-item">
-              <img src="../Images/ROHL2.jpg" class="d-block w-100" alt="ROHLGlobal">
+              <img src="../Images/ROHL2.jpg" class="d-block w-100">
             </div>
             <div class="carousel-item">
-              <img src="../Images/LSA1.jpg" class="d-block w-100" alt="LSA">
+              <img src="../Images/LSA1.jpg" class="d-block w-100">
             </div>
             <div class="carousel-item">
-              <img src="../Images/LSA2.jpg" class="d-block w-100" alt="LSA">
+              <img src="../Images/LSA2.jpg" class="d-block w-100">
             </div>
             <div class="carousel-item">
-              <img src="../Images/TAG.jpeg" class="d-block w-100" alt="TheAgingGames">
+              <img src="../Images/TAG.jpeg" class="d-block w-100">
             </div>
           </div>
 
-          <!-- Indicators -->
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#Carousel" data-bs-slide-to="0" class="active"></button>
             <button type="button" data-bs-target="#Carousel" data-bs-slide-to="1"></button>
@@ -198,10 +210,10 @@
     <div id="MealMatchCarousel" class="carousel slide mt-4">
       <div class="carousel-inner rounded-4 overflow-hidden">
         <div class="carousel-item active">
-          <img src="../Images/MealMatchMockup1.jpg" class="d-block w-100">
+          <img src="../Images/MealMatchMockup1.jpg">
         </div>
         <div class="carousel-item">
-          <img src="../Images/MealMatchMockup2.jpg" class="d-block w-100">
+          <img src="../Images/MealMatchMockup2.jpg">
         </div>
       </div>
 
@@ -212,102 +224,35 @@
         <span class="carousel-control-next-icon"></span>
       </button>
     </div>
-
-    <div class="case-card">
-      <div class="section-label">Problem</div>
-      <p>Busy students and early-career professionals struggle with meal planning due to time constraints and decision fatigue. Existing recipe platforms require manual entry, creating friction and leading to default takeout.</p>
-
-      <div class="section-label">Objective</div>
-      <p>Design a low-effort, intuitive solution that reduces input friction and decision fatigue.</p>
-
-      <div class="section-label">User Pain Points</div>
-      <ul>
-        <li>“I don’t know what to cook with what I have.”</li>
-        <li>Too many steps to find a recipe</li>
-        <li>Time pressure after school/work</li>
-        <li>Overwhelming recipe options</li>
-        <li>Food expiring due to lack of planning</li>
-      </ul>
-
-      <div class="section-label">Solution</div>
-      <p>Users upload a single photo of their fridge. The system detects ingredients and generates quick meal suggestions, minimizing friction and cognitive load.</p>
-    </div>
   </section>
 
   <!-- ================= NPAS ================= -->
   <section>
     <h2>Canadian NPAS Redesign</h2>
 
-    <div class="d-flex justify-content-center mt-4">
-      <div style="max-width: 400px; width: 100%;">
-        <div id="NPASRedesign" class="carousel slide">
-          <div class="carousel-inner rounded-4 overflow-hidden">
-            <div class="carousel-item active">
-              <img src="../Images/NPAS1.jpeg" class="d-block w-100">
-            </div>
-            <div class="carousel-item">
-              <img src="../Images/NPAS2.jpeg" class="d-block w-100">
-            </div>
-            <div class="carousel-item">
-              <img src="../Images/NPAS3.jpeg" class="d-block w-100">
-            </div>
-          </div>
-
-          <button class="carousel-control-prev" type="button" data-bs-target="#NPASRedesign" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#NPASRedesign" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </button>
+    <div id="NPASRedesign" class="carousel slide mt-4">
+      <div class="carousel-inner rounded-4 overflow-hidden">
+        <div class="carousel-item active">
+          <img src="../Images/NPAS1.jpeg">
+        </div>
+        <div class="carousel-item">
+          <img src="../Images/NPAS2.jpeg">
+        </div>
+        <div class="carousel-item">
+          <img src="../Images/NPAS3.jpeg">
         </div>
       </div>
-    </div>
 
-    <div class="case-card">
-      <div class="section-label">Problem</div>
-      <p>Emergency alert systems must communicate critical information instantly. Existing NPAS interface presents dense info with limited hierarchy, making comprehension harder in stressful situations.</p>
-
-      <div class="section-label">Objective</div>
-      <p>Modernize the alert interface to improve clarity, accessibility, and response efficiency.</p>
-
-      <div class="section-label">User Pain Points</div>
-      <ul>
-        <li>Difficulty identifying urgent info</li>
-        <li>Overwhelming text blocks</li>
-        <li>Limited accessibility considerations</li>
-        <li>Unclear action steps</li>
-      </ul>
-
-      <div class="section-label">Solution</div>
-      <p>Redesign introduces stronger hierarchy, simplified messaging, clear urgency indicators, and accessibility improvements to reduce cognitive load.</p>
+      <button class="carousel-control-prev" type="button" data-bs-target="#NPASRedesign" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#NPASRedesign" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
     </div>
   </section>
 
 </div>
-<!-- ================= Video ================= -->
-  <section>
-  <h2>Community Storytelling Project</h2>
-
-  <div class="mt-4">
-  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px;">
-    
-    <iframe 
-      src="https://www.youtube.com/embed/ezMNhStFTSw"
-      title="Community Storytelling Video"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-      style="position: absolute; top:0; left:0; width:100%; height:100%;">
-    </iframe>
-  </div>
-</div>
-
-  <div class="case-card">
-    An interactive storytelling project inviting individuals to reflect on untold parts of their lives through anonymous prompts. 
-By creating a simple yet intimate experience, the project captures moments of honesty, vulnerability, and connection across different perspectives.
-  </div>
-</section>
-
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
